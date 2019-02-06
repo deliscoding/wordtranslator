@@ -24,11 +24,13 @@ export default {
     };
   },
   methods: {
-    translateText: function(text) {
+    translateText: function(text, language) {
       // request. Test to make sure http request to Yandex API will work
       this.$http
         .get(
-          "https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20181228T102133Z.f7df98ae349299f0.070d0f465b5935cfcfffdd3de5441ba16966c870&lang=ru&text=" +
+          "https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20181228T102133Z.f7df98ae349299f0.070d0f465b5935cfcfffdd3de5441ba16966c870&lang=" +
+            language +
+            "&text=" +
             text
         )
         .then(response => {
