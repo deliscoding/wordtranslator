@@ -1,16 +1,30 @@
 <template>
-  <div id="translateForm">TRANSLATE FORM
-    <form v-on:submit="formSubmit">
-      <!-- binds this input to a component property -->
-      <input type="text" v-model="textToTranslate" placeholder="Enter a Word...">
-      <select v-model="language">
-        <option value="ru">Russian</option>
-        <option value="es">Spanish</option>
-        <option value="fr">French</option>
-        <option value="zh">Chinese</option>
-      </select>
-      <input type="submit" value="Translate">
-    </form>
+  <div class="container">
+    <div class="row" id="translateForm">
+      <!-- push our styling to the middle -->
+      <div class="mx-auto">
+        <form id="transForm" class="form-inline well" v-on:submit="formSubmit">
+          <!-- binds this input to a component property -->
+          <br>
+          <br>
+          <br>
+          <input
+            class="form-control"
+            type="text"
+            v-model="textToTranslate"
+            placeholder="Enter a Word..."
+          >
+          <select class="form-control" v-model="language">
+            <option value="ru">Russian</option>
+            <option value="es">Spanish</option>
+            <option value="fr">French</option>
+            <option value="zh">Chinese</option>
+          </select>
+          <br>
+          <input class="btn btn-success" type="submit" value="Translate">
+        </form>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -40,4 +54,8 @@ export default {
 </script>
 
 <style>
+#transForm {
+  border-radius: 1px;
+  border: 1px #ccc solid;
+}
 </style>
