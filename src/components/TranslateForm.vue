@@ -20,7 +20,9 @@ export default {
   methods: {
     // prevent from submitting to a webpage
     formSubmit(e) {
-      alert("Translated Word submitted");
+      // test- alert("Translated Word submitted");
+      // emitting the textToTranslate value to App.vue
+      this.$emit("formSubmit", this.textToTranslate);
       e.preventDefault();
     }
   }
